@@ -1,0 +1,40 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body
+{
+    height: 100vh;
+    font-family: 'Poppins';
+    background-color: rgb(27, 27, 31);
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  color: white;
+  margin: 10vw;
+}
+
+h1 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 5rem;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2rem;
+}
