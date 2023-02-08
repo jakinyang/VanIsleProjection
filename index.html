@@ -6,7 +6,11 @@
   <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital@0;1&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vite App</title>
 </head>
@@ -14,8 +18,36 @@
 <body>
   <div class="container">
     <h1>VANCOUVER ISLAND</h1>
-    <p>Built with Three.js and data from NASA EarthData</p>
+    <p>Terrain elevation data visualised</p>
+    <p>Built using Three.js and DEM data from NASA EarthData</p>
   </div>
+  <div class="footer">
+    <div class="info">
+      <a href="https://threejs.org/">
+        <p>
+          Three.js
+          <span class="material-symbols-outlined">
+            arrow_outward
+          </span>
+        </p>
+      </a>
+      <a href="https://www.earthdata.nasa.gov/">
+        <p>
+          NASA
+          <span class="material-symbols-outlined">
+            arrow_outward
+          </span>
+        </p>
+      </a>
+    </div>
+    <div class="tag">
+      <p>Made by: </p>
+      <a href="https://github.com/jakinyang">
+      <p><i class="fa fa-github"></i> github.com/jakinyang</p>
+    </a>
+    </div>
+  </div>
+  <iframe style="border-radius:12px; position: absolute; bottom: 0; left: 0; z-index: 10;" src="https://open.spotify.com/embed/track/4S8IPAhjIxeYdJl6mDmGIp?utm_source=generator&theme=0" width="20%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   <canvas class="webgl"></canvas>
   <script type="module" src="./src/script.js"></script>
 </body>

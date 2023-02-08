@@ -2,9 +2,9 @@ import '../style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import * as dat from 'dat.gui';
+import gsap from 'gsap';
 
 // Debug
-const gui = new dat.GUI()
 
 // Constants
 const sizes = {
@@ -39,9 +39,8 @@ const material = new THREE.MeshStandardMaterial({
 
 // Mesh
 const planeMesh = new THREE.Mesh(plane, material);
-
+planeMesh.rotation.set(-0.4, 0.1, 0.1)
 scene.add(planeMesh);
-gui.add(planeMesh.rotation, 'x').min(-Math.PI).max(Math.PI)
 
 // Lights
 const light = { color: 0x2a6db9, intensity: 2 }
@@ -53,14 +52,6 @@ pointLight.position.z = 15;
 const ambientLight = new THREE.AmbientLight(ambientLightParams.color, ambientLightParams.intensity);
 
 scene.add(pointLight, ambientLight);
-
-
-
-gui.add(pointLight.position, 'x').min(-10).max(10);
-gui.add(pointLight.position, 'y').min(-10).max(10);
-gui.add(pointLight.position, 'z').min(-10).max(10);
-gui.addColor(light, 'color').onChange(() => pointLight.color.set(light.color))
-
 
 window.addEventListener('resize', () => {
   // Update sizes
@@ -81,7 +72,7 @@ window.addEventListener('resize', () => {
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 200)
 camera.position.x = 0
 camera.position.y = 1
-camera.position.z = 7
+camera.position.z = 5
 scene.add(camera)
 
 // Controls
@@ -96,17 +87,16 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
+// gsap Animation sequence
+const timeline = gsap.timeline({repeat: -1})
+timeline.to(camera.position, {x: -5, y: 3.3, z: 1.5, duration: 15})
+timeline.to(camera.position, {x: 3.75, y: -2.75, z: 2.5, duration: 40})
+timeline.to(camera.position, {x: 0, y: 1, z: 5, duration: 15})
 // Animate
 const clock = new THREE.Clock()
 
 const tick = () => {
-
   const elapsedTime = clock.getElapsedTime()
-
-  // Update objects
-
-  // Update Orbital Controls
-  controls.update()
 
   // Render
   renderer.render(scene, camera)
