@@ -75,10 +75,6 @@ camera.position.y = 1
 camera.position.z = 5
 scene.add(camera)
 
-// Controls
-const controls = new OrbitControls(camera, canvas)
-controls.enableDamping = true
-
 // Renderer
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
