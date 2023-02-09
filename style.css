@@ -77,5 +77,10 @@ a {
 
 a:hover {
   color: #bbd5ff;
-  transition-duration: 300ms;
+  transition-duration: 400ms;
+}
+
+.titleChar:hover {
+  color: #bbd5ff;
+  transition-duration: 400ms;
 }
